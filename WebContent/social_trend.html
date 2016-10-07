@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html>
+
+<head> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/canvasjs/1.7.0/jquery.canvasjs.min.js"></script>
+<script src="http://d3js.org/d3.v3.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
+<script type="text/javascript">
+window.onload = function () {
+	var chart = new CanvasJS.Chart("chartContainer",
+	{
+		title:{
+			text: "Social Trend Comparison"
+		},
+                animationEnabled: true,
+		legend:{
+			verticalAlign: "bottom",
+			horizontalAlign: "center"
+		},
+		data: [
+		{        
+			indexLabelFontSize: 20,
+			indexLabelFontFamily: "Monospace",       
+			indexLabelFontColor: "darkgrey", 
+			indexLabelLineColor: "darkgrey",        
+			indexLabelPlacement: "outside",
+			type: "pie",       
+			showInLegend: true,
+			toolTipContent: "{y} - <strong>#percent%</strong>",
+			dataPoints: dataPoint
+		}
+		]
+	});
+	chart.render();
+}
+</script>
+<script type="text/javascript" src="/assets/script/canvasjs.min.js"></script>
+</head>
+<body>
+<div id="chartContainer" style="height: 300px; width: 100%;"></div>
+</body>
+</html>
